@@ -37,9 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
         TextView cajaResultado = findViewById(R.id.textView3);
 
-        int num1 = Integer.parseInt(cajaNum1.getText().toString());
+        String texto1 = cajaNum1.getText().toString();
 
-        int num2 = Integer.parseInt(cajaNum2.getText().toString());
+        String texto2 = cajaNum2.getText().toString();
+
+        if (texto1.isEmpty() || texto2.isEmpty()){
+            Toast.makeText(this, "ingrese dos numeros", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int num1 = Integer.parseInt(texto1);
+
+        int num2 = Integer.parseInt(texto2);
 
         int resultado = num1 + num2;
 
