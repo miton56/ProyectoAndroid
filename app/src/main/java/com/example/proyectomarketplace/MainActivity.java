@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenedorFragment, new Main())
+                    .commit();
+        }
     }
 
     public void mostrarMensaje(View view) {
@@ -31,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sumar(View view){
-        EditText cajaNum1 = findViewById(R.id.editTextNumber);
+        EditText cajaNum1 = findViewById(R.id.editTextNumber7);
 
-        EditText cajaNum2 = findViewById(R.id.editTextNumber2);
+        EditText cajaNum2 = findViewById(R.id.editTextNumber6);
 
-        TextView cajaResultado = findViewById(R.id.textView3);
+        TextView cajaResultado = findViewById(R.id.textView);
 
         String texto1 = cajaNum1.getText().toString();
 

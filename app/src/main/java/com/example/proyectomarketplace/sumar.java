@@ -13,6 +13,10 @@ import android.widget.Toast;
 
 public class sumar extends Fragment {
 
+    private EditText cajaNum1;
+    private EditText cajaNum2;
+    private TextView cajaResultado;
+
     public sumar() {
         // Constructor vacío obligatorio
     }
@@ -20,22 +24,27 @@ public class sumar extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflar el layout del fragmento
-        return inflater.inflate(R.layout.fragment_sumar, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_sumar, container, false);
+
+        EditText cajaNum1 = rootView.findViewById(R.id.editTextNumber7);
+
+        EditText cajaNum2 = rootView.findViewById(R.id.editTextNumber6);
+
+        TextView cajaResultado = rootView.findViewById(R.id.textView);
+
+        return rootView;
+
     }
     public void sumar1(View view){
-        EditText cajaNum1 = view.findViewById(R.id.editTextNumber);
 
-        EditText cajaNum2 = view.findViewById(R.id.editTextNumber2);
-
-        TextView cajaResultado = view.findViewById(R.id.textView3);
 
         String texto1 = cajaNum1.getText().toString();
 
         String texto2 = cajaNum2.getText().toString();
 
         if (texto1.isEmpty() || texto2.isEmpty()){
-            Toast.makeText(this, "ingrese dos numeros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "ingrese dos numeros", Toast.LENGTH_SHORT).show();
             return;
         }
 
