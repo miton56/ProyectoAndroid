@@ -27,7 +27,7 @@ public class Main extends Fragment {
         botonCambiar = rootView.findViewById(R.id.botonCambiar);
 
         botonCambiar.setOnClickListener(v -> {
-            // Aquí cambias al otro fragmento
+
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.contenedorFragment, new sumar())
                     .addToBackStack(null)
